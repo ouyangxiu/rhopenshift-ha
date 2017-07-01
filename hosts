@@ -876,5 +876,7 @@ loadbalancer1.example.com containerized=false
 # However, in order to ensure that your masters are not burdened with running pods you should
 # make them unschedulable by adding openshift_schedulable=False any node that's also a master.
 [nodes]
-master1.example.com unschedulable=true openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+#master1.example.com unschedulable=true openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+master1.example.com unschedulable=true 
 node1.example.com openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+infranode1.example.com openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
