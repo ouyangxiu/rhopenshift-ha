@@ -4,8 +4,8 @@
 [OSEv3:children]
 masters
 nodes
+lb
 #etcd
-#lb
 #nfs
 
 # Set variables common for all OSEv3 hosts
@@ -264,6 +264,9 @@ openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 
 #openshift_master_cluster_method=native
 #openshift_master_cluster_hostname=openshift-ansible.test.example.com
 #openshift_master_cluster_public_hostname=openshift-ansible.test.example.com
+openshift_master_cluster_method=native
+openshift_master_cluster_hostname=loadbalancer1.example.com
+openshift_master_cluster_public_hostname=loadbalancer1-6ecd.oslab.opentlc.com
 
 # Pacemaker high availability cluster method.
 # Pacemaker HA environment must be able to self provision the
@@ -866,8 +869,8 @@ master1.example.com
 
 # NOTE: Containerized load balancer hosts are not yet supported, if using a global
 # containerized=true host variable we must set to false.
-#[lb]
-#ose3-lb-ansible.test.example.com containerized=false
+[lb]
+loadbalancer1.example.com containerized=false
 
 # NOTE: Currently we require that masters be part of the SDN which requires that they also be nodes
 # However, in order to ensure that your masters are not burdened with running pods you should
