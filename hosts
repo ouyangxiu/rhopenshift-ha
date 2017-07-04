@@ -290,7 +290,7 @@ openshift_master_cluster_public_hostname=loadbalancer1-6ecd.oslab.opentlc.com
 
 # default subdomain to use for exposed routes
 #openshift_master_default_subdomain=apps.test.example.com
-openshift_master_default_subdomain=cloudapps-6ecd.oslab.opentlc.com
+openshift_master_default_subdomain=cloudapps-f587.oslab.opentlc.com
 
 # additional cors origins
 #osm_custom_cors_origins=['foo.example.com', 'bar.example.com']
